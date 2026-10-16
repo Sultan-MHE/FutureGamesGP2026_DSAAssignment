@@ -3,32 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Environment {
-    public class Computer : MonoBehaviour, IInteractable {
-        // [SerializeField]
+namespace Environment
+{
+    public class Computer : MonoBehaviour, IInteractable
+    {
+        [SerializeField]
+        public GenericQueue<Task> taskQueue = new GenericQueue<Task>(); // Put your stack/queue here :)
 
-        int interactionCounter;
-        private Queue<int> commands = new Queue<int>();
-        //private Task testTask = null; // Put your stack/queue here :)
 
-        //build your own queueueueueu 
+        public void OnInteract()
+        {
+            
+            // way 1
+            Task task = taskQueue.Dequeue();
+            task.Execute();
 
-        public void OnInteract() {
+            // way 2 (does the same thing but limits you so you cant do anything between Dequeue and Execute)
+            // taskQueue.Dequeue().Execute();
 
-            commands.Enqueue(interactionCounter);
-
-            if(interactionCounter == 0) {
-                Debug.Log("Welcome! This is your first time here");
-                interactionCounter = 1;
-            }
-
-            else {
-                Debug.Log("You have logged in " + commands.Dequeue() + " times :)");
-                interactionCounter++;
-            }
-            //testTask.Execute();
-
-            //TEST
         }
     }
 }
