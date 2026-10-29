@@ -20,16 +20,16 @@ namespace Environment.Tasks
                 return;
             }
 
-            foreach (Employee employee in EmployeeManager.Instance.Employees)
-            {
-                employee.Intialize(); //converting string to datetime
-                Debug.Log("Name: " + employee.name);
-                Debug.Log("Employee ID: " + employee.employeeId);
-                Debug.Log("Clearance: " + employee.hasEngineRoomClearance);
-                Debug.Log("Last Entrance: " + employee.lastEntranceInEngineRoom);
-                Debug.Log("Last Exit: " + employee.lastExitFromEngineRoom);
+      foreach (Employee employee in EmployeeManager.Instance.Employees)
+      {
+        employee.Intialize(); //converting string to datetime
+        //Debug.Log("Name: " + employee.name);
+        //Debug.Log("Employee ID: " + employee.employeeId);
+        //Debug.Log("Clearance: " + employee.hasEngineRoomClearance);
+        //Debug.Log("Last Entrance: " + employee.lastEntranceInEngineRoom);
+        //Debug.Log("Last Exit: " + employee.lastExitFromEngineRoom);
 
-            }
-        }
+      }
+    }
     }
 }

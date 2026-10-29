@@ -10,7 +10,7 @@ namespace Environment
         public string name;
         public int employeeId;
         public bool hasEngineRoomClearance;
-        public string lastEntranceInEngineRoom; //challenge: dont save this as a string :3
+        public string lastEntranceInEngineRoom; 
         public string lastExitFromEngineRoom;
 
         public DateTime lastEntranceInEngineRoomDateTime;
