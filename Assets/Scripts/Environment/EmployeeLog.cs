@@ -12,44 +12,22 @@ namespace Environment
         public bool hasEngineRoomClearance;
         public string lastEntranceInEngineRoom; //challenge: dont save this as a string :3
         public string lastExitFromEngineRoom;
+
+        public DateTime lastEntranceInEngineRoomDateTime;
+        public DateTime lastExitFromEngineRoomDateTime;
+
+
+        public void Intialize() //converting string to datetime
+        {
+            lastEntranceInEngineRoomDateTime = DateTime.Parse(lastEntranceInEngineRoom);
+            lastExitFromEngineRoomDateTime = DateTime.Parse(lastExitFromEngineRoom);
+        }
     }
-
-    //public class EmployeeLog<T>
-    //{
-    //    [SerializeField]
-    //    private TextAsset jsonFile = null;
-
     [Serializable]
     public class EmployeeArray
     {
         public Employee[] employees;
     }
-
-    //public T EmployeeLogPrint()
-    //{
-
-    //    if (jsonFile == null)
-    //    {
-    //        return T;
-    //    }
-
-    //    Employee[] employees = JsonUtility.FromJson<EmployeeArray>(jsonFile.text)?.employees;
-
-    //    if (employees != null && employees.Length <= 0)
-    //    {
-    //        //  return;
-    //    }
-
-    //    foreach (Employee employee in employees)
-    //    {
-    //        Debug.Log("Name: " + employee.name);
-    //        Debug.Log("Employee ID: " + employee.employeeId);
-    //        Debug.Log("Clearance: " + employee.hasEngineRoomClearance);
-    //        Debug.Log("Last Entrance: " + employee.lastEntranceInEngineRoom);
-    //        Debug.Log("Last Exit: " + employee.lastExitFromEngineRoom);
-
-    //    }
-    //}
 
 }
 

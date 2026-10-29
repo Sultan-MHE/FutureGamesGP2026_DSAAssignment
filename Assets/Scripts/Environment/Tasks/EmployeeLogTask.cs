@@ -1,6 +1,4 @@
 using UnityEngine;
-
-
 namespace Environment.Tasks
 {
     [CreateAssetMenu(fileName = "EmployeeLogTask", menuName = "EmployeeLogTask")]
@@ -15,16 +13,16 @@ namespace Environment.Tasks
             {
                 return;
             }
+            EmployeeManager.Instance.Employees = JsonUtility.FromJson<EmployeeArray>(jsonFile.text)?.employees;
 
-            Employee[] employees = JsonUtility.FromJson<EmployeeArray>(jsonFile.text)?.employees;
-
-            if (employees != null && employees.Length <= 0)
+            if (EmployeeManager.Instance.Employees != null && EmployeeManager.Instance.Employees.Length <= 0)
             {
                 return;
             }
 
-            foreach (Employee employee in employees)
+            foreach (Employee employee in EmployeeManager.Instance.Employees)
             {
+                employee.Intialize(); //converting string to datetime
                 Debug.Log("Name: " + employee.name);
                 Debug.Log("Employee ID: " + employee.employeeId);
                 Debug.Log("Clearance: " + employee.hasEngineRoomClearance);
