@@ -14,8 +14,6 @@ namespace Environment.Tasks
         Debug.Log("Name: " + employee.name);
         Debug.Log("Last Exit: " + employee.lastExitFromEngineRoom);
       }
-
-      UnityEngine.Debug.Log(outputArray.Length);
     }
   }
 }

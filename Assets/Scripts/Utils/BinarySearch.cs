@@ -52,16 +52,16 @@ public class BinarySearch
         right = middle - 1;
     }
 
-    Employee[] employeeRange = new Employee[indexUpperRange - indexLowerRange + 1]; //making a new array
+        Employee[] employeeRange = new Employee[indexUpperRange - indexLowerRange + 1]; //making a new array
 
-    int k = 0;
+        int k = 0;
 
-    for (int i = indexLowerRange; i <= indexUpperRange; i++) //for everything between indexLR and indexUR
-    {
-      employeeRange[k++] = employees[i]; //populate the new array with the values from employees that are within the set range
+        for (int i = indexLowerRange; i <= indexUpperRange; i++) //for everything between indexLR and indexUR
+        {
+            employeeRange[k++] = employees[i]; //populate the new array with the values from employees that are within the set range
+        }
+
+        return employeeRange; //return new array 
+
     }
-
-    return employeeRange; //return new array 
-
-  }
 }
