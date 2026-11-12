@@ -69,7 +69,7 @@ public class BST
         Stack<BSTNode<Employee>> BSTStack = new Stack<BSTNode<Employee>>();
         BSTNode<Employee> current = root;
 
-        while (current != null)
+        while (current != null || !(BSTStack.Count == 0))
         {
             while (current != null)
             {
@@ -78,7 +78,7 @@ public class BST
             }
 
             current = BSTStack.Pop();
-            Debug.Log("Result: " + current.GetData().lastEntranceInEngineRoom + "");
+            Debug.Log("Name: " + current.GetData().name + "Last Entrance" + current.GetData().lastEntranceInEngineRoom + "");
             current = current.rightChild;
         }
     }

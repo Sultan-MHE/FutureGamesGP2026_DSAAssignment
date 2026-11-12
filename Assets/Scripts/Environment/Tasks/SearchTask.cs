@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Linq;
 using UnityEngine;
 namespace Environment.Tasks
 {
@@ -11,7 +12,7 @@ namespace Environment.Tasks
             stopWatch.Start();
 
             Employee[] outputArray = BinarySearch.EmployeesInDateTimeRange(EmployeeManager.Instance.Employees, 
-                new System.DateTime(2234, 08, 07, 20, 44, 44), new System.DateTime(2234, 04, 07, 20, 44, 44));
+                new System.DateTime(2234, 09, 09, 10, 00, 00), new System.DateTime(2234, 09, 09, 11, 00, 00));
 
             foreach (Employee employee in outputArray)
             {
@@ -21,6 +22,7 @@ namespace Environment.Tasks
             }
             stopWatch.Stop();
             UnityEngine.Debug.Log("It took " + stopWatch.ElapsedMilliseconds + "ms");
+            UnityEngine.Debug.Log("Found this many: " + outputArray.Length + "  YIPPE!");
         }
     }
 }
