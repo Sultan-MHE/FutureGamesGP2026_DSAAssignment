@@ -31,7 +31,7 @@ public class BST
         root = new BSTNode<Employee>(rootData);
     }
 
-    public void Insert(Employee inData)
+    public void Insert(Employee inData) //filling tree with data from Employee 
     {
         //assuming that values are unique
         BSTNode<Employee> newNode = new BSTNode<Employee>(inData);
@@ -66,7 +66,7 @@ public class BST
 
     public void Traverse()
     {
-        Stack<BSTNode<Employee>> BSTStack = new Stack<BSTNode<Employee>>();
+        Stack<BSTNode<Employee>> BSTStack = new Stack<BSTNode<Employee>>(); //create a new stack with the data from employees
         BSTNode<Employee> current = root;
 
         while (current != null || !(BSTStack.Count == 0))
